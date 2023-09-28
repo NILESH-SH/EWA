@@ -1,14 +1,11 @@
 package Demoalp;
-
 class ThreadDemo extends Thread {
     private Thread t;
     private String threadName;
-
     ThreadDemo(String name) {
         threadName = name;
         System.out.println("Creating " + threadName);
     }
-
     public void run() {
         System.out.println("Running " + threadName);
         try {
@@ -20,17 +17,14 @@ class ThreadDemo extends Thread {
             System.out.println("Thread " + threadName + " , " + "interupted.");
         }
     }
-
 }
-
-/**
- * ThreadSleep
- */
 public class ThreadSleep{
     public static void main(String[] args){
         ThreadDemo t1 = new ThreadDemo("THread1");
         t1.start();
         ThreadDemo t2 = new ThreadDemo("THread2");
         t2.start();
+        System.out.println(t1.isAlive());
+        System.out.println(t2.isAlive());
     }
 }
